@@ -1,12 +1,9 @@
 package com.bridgelabz.test;
 
 import java.sql.SQLException;
-
 import org.junit.Test;
-
 import com.bridgelabz.main.EmployeePayrollException;
 import com.bridgelabz.main.EmployeePayrollService;
-
 import junit.framework.Assert;
 
 public class EmployeePayrollServiceTest {
@@ -36,8 +33,7 @@ public class EmployeePayrollServiceTest {
 
 	/**
 	 * test case to update the salary
-	 * 
-	 * @throws EmployeePayrollException
+	 * @throws EmployeePayrollException 
 	 */
 	@Test
 	public void givenEmployeePayrollDatabase_ShouldUpdateSalary() throws EmployeePayrollException {
@@ -46,31 +42,15 @@ public class EmployeePayrollServiceTest {
 		Assert.assertTrue(result);
 
 	}
-
+	
 	/**
 	 * test case to update the salary using prepared statement
-	 * 
-	 * @throws EmployeePayrollException
+	 * @throws EmployeePayrollException 
 	 */
 	@Test
-	public void givenEmployeePayrollDatabase_ShouldUpdateSalaryUsingPreparedStatement()
-			throws EmployeePayrollException {
+	public void givenEmployeePayrollDatabase_ShouldUpdateSalaryUsingPreparedStatement() throws EmployeePayrollException {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		boolean result = employeePayrollService.updateSalaryPrepared();
-		Assert.assertTrue(result);
-
-	}
-
-	/**
-	 * test case to retrieve the employee by name using prepared statement
-	 * 
-	 * @throws EmployeePayrollException
-	 */
-	@Test
-	public void givenEmployeePayrollDatabase_ShouldReturnEmployeeDetailsUsingPreparedStatement()
-			throws EmployeePayrollException {
-		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
-		boolean result = employeePayrollService.retrievePrepared("Tersia");
 		Assert.assertTrue(result);
 
 	}
