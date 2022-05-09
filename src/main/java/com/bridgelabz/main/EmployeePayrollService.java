@@ -99,13 +99,14 @@ public class EmployeePayrollService {
 	}
 
 	public boolean updateSalaryPrepared() throws EmployeePayrollException {
-		
+
 		Connection connection;
 		boolean success = false;
 		try {
 			connection = getConnection();
 			Statement statement = connection.createStatement();
-			PreparedStatement preparedStatement = connection.prepareStatement("update employee_payroll set salary=? where name=?");
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("update employee_payroll set salary=? where name=?");
 			preparedStatement.setDouble(1, 300000);
 			preparedStatement.setString(2, "Tersia");
 			success = true;
@@ -116,7 +117,44 @@ public class EmployeePayrollService {
 		}
 
 		return success;
-		
+
+	}
+
+	/**
+	 * method to retrieve employee data based on name
+	 * 
+	 * @param name
+	 * @return
+	 * @throws EmployeePayrollException
+	 */
+	public boolean retrievePrepared(String name) throws EmployeePayrollException {
+		Connection connection;
+		boolean success = false;
+		try {
+			connection = getConnection();
+			Statement statement = connection.createStatement();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from employee_payroll where name=?");
+			preparedStatement.setString(1, name);
+			success = true;
+		} catch (ClassNotFoundException e) {
+			throw new EmployeePayrollException("class not found");
+		} catch (SQLException e) {
+			throw new EmployeePayrollException("sql exception");
+		}
+
+		return success;
+
+	}
+
+	public void retrieveDate() throws ClassNotFoundException, SQLException {
+		Connection connection = getConnection();
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("select * from employee_payroll where start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW())");
+		while (resultSet.next()) {
+			System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + " " + resultSet.getString(3) + " "
+					+ resultSet.getDouble(4) + " " + resultSet.getDate(5));
+		}
 	}
 
 }
