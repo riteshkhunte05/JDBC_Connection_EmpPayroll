@@ -3,74 +3,74 @@ package com.bridgelabz.main;
 import java.time.LocalDate;
 
 public class EmployeePayrollData {
-	
-int id;
-String name;
-String gender;
-double salary;
-LocalDate startDate;
 
-public EmployeePayrollData(int id, String name, String gender, double salary) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.gender = gender;
-	this.salary = salary;
-}
+	int id;
+	String name;
+	String gender;
+	double salary;
+	LocalDate startDate;
 
-public EmployeePayrollData(int id, String name, String gender, double salary, LocalDate startDate) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.gender = gender;
-	this.salary = salary;
-	this.startDate = startDate;
-}
+	public EmployeePayrollData(int id, String name, String gender, double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.salary = salary;
+	}
 
-public int getId() {
-	return id;
-}
+	public EmployeePayrollData(int id, String name, String gender, double salary, LocalDate startDate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.salary = salary;
+		this.startDate = startDate;
+	}
 
-public void setId(int id) {
-	this.id = id;
-}
+	public int getId() {
+		return id;
+	}
 
-public String getName() {
-	return name;
-}
+	public void setId(int id) {
+		this.id = id;
+	}
 
-public void setName(String name) {
-	this.name = name;
-}
+	public String getName() {
+		return name;
+	}
 
-public String getGender() {
-	return gender;
-}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-public void setGender(String gender) {
-	this.gender = gender;
-}
+	public String getGender() {
+		return gender;
+	}
 
-public double getSalary() {
-	return salary;
-}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
-public void setSalary(double salary) {
-	this.salary = salary;
-}
+	public double getSalary() {
+		return salary;
+	}
 
-public LocalDate getStartDate() {
-	return startDate;
-}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
 
-public void setStartDate(LocalDate startDate) {
-	this.startDate = startDate;
-}
+	public LocalDate getStartDate() {
+		return startDate;
+	}
 
-@Override
-public String toString() {
-	return "EmployeePayrollData [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary
-			+ ", startDate=" + startDate + "]";
-}
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeePayrollData [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary
+				+ ", startDate=" + startDate + "]";
+	}
 
 }
