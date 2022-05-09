@@ -2,9 +2,13 @@ package com.bridgelabz.test;
 
 import java.sql.SQLException;
 
+import org.junit.Assert;
 import org.junit.Test;
 
+import com.bridgelabz.main.EmployeePayrollException;
 import com.bridgelabz.main.EmployeePayrollService;
+
+
 
 public class EmployeePayrollServiceTest {
 	/**
@@ -29,5 +33,17 @@ public class EmployeePayrollServiceTest {
 	public void givenEmployeePayrollDatabase_ShouldRetrieveData() throws ClassNotFoundException, SQLException {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		employeePayrollService.selectData();
+	}
+
+	/**
+	 * test case to update the salary
+	 * @throws EmployeePayrollException 
+	 */
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldUpdateSalary() throws EmployeePayrollException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		boolean result = employeePayrollService.updateSalary();
+		Assert.assertTrue(result);
+
 	}
 }
