@@ -2,8 +2,10 @@ package com.bridgelabz.test;
 
 import java.sql.SQLException;
 import org.junit.Test;
+
 import com.bridgelabz.main.EmployeePayrollException;
 import com.bridgelabz.main.EmployeePayrollService;
+
 import junit.framework.Assert;
 
 public class EmployeePayrollServiceTest {
@@ -84,6 +86,81 @@ public class EmployeePayrollServiceTest {
 			throws EmployeePayrollException, ClassNotFoundException, SQLException {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		employeePayrollService.retrieveDate();
+
+	}
+	
+	/**
+	 * test case to sum of salary
+	 * 
+	 * @throws EmployeePayrollException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnSumofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveSum();
+
+	}
+	
+	/**
+	 * test case to average of salary
+	 * 
+	 * @throws EmployeePayrollException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnAverageofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveAverage();
+
+	}
+	
+	/**
+	 * test case to minimum of salary
+	 * 
+	 * @throws EmployeePayrollException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnMinofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveMinimum();
+
+	}
+	
+	/**
+	 * test case to max of salary
+	 * 
+	 * @throws EmployeePayrollException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnMaxofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveMaximum();
+
+	}
+	
+	/**
+	 * test case to count of salary
+	 * 
+	 * @throws EmployeePayrollException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnCountofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveCount();
 
 	}
 }
